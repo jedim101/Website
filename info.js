@@ -32,6 +32,10 @@ function createTag() {
 }
 
 function addTag(newTag) {
+  let newSpan = document.createElement("span");
+  newSpan.setAttribut("class", "options");
+  document.getElementById("tagOpts").appendChild(newSpan);
+  
   let tagOption = document.createElement("input");
   tagOption.setAttribute("type", "checkbox");
   tagOption.setAttribute("name", "tagOptions");
