@@ -79,5 +79,10 @@ input[type=checkbox] {
 }
 
 .option {
+    position: absolute;
+    top: 0;
+    left: 0;
+    hieght: 25px;
+    width:25px;
     background-color: green;
 }
