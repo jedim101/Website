@@ -42,7 +42,6 @@ function addTag(newTag) {
   tagOption.setAttribute("type", "checkbox");
   tagOption.setAttribute("name", "tagOptions");
   tagOption.setAttribute("id", newTag);
-  tagOption.setAttribute("class","options");
   tagLabel.appendChild(tagOption);
   
   let newSpan = document.createElement("span");
