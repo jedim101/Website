@@ -32,18 +32,22 @@ function createTag() {
 }
 
 function addTag(newTag) {
-  let tagOption = document.createElement("input");
-  tagOption.setAttribute("type", "checkbox");
-  tagOption.setAttribute("name", "tagOptions");
-  tagOption.setAttribute("id", newTag);
-  tagOption.setAttribute("class","options");
-  document.getElementById("tagOpts").appendChild(tagOption);
-
   let tagLabel = document.createElement("label");
   tagLabel.setAttribute("for", newTag);
   tagLabel.setAttribute("id", newTag+"Label")
   tagLabel.innerHTML = newTag;
   document.getElementById("tagOpts").appendChild(tagLabel);
+  
+  let tagOption = document.createElement("input");
+  tagOption.setAttribute("type", "checkbox");
+  tagOption.setAttribute("name", "tagOptions");
+  tagOption.setAttribute("id", newTag);
+  tagOption.setAttribute("class","options");
+  tagLabel.appendChild(tagOption);
+  
+  let newSpan = document.createElement("span");
+  newSpan.setAttribute("class", "option");
+  tagLabel.appendChild(newSpan);
 
   let newBreak = document.createElement("br");
   document.getElementById("tagOpts").appendChild(newBreak);
