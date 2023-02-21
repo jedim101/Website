@@ -80,9 +80,9 @@ input[type=checkbox] {
 
 .options {
     position: absolute;
-    top: 0;
+    top: 200px;
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: black;
+    background-color: white;
 }
