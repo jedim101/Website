@@ -78,7 +78,7 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-.option {
+.options {
     position: absolute;
     top: 0;
     left: 0;
