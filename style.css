@@ -73,15 +73,3 @@ header li a {
 header li a:hover {
     color: black;
 }
- input[type=checkbox] {
-     visibility: hidden;
-}
-
-.option {
-    position: absolute;
-    top: 0;
-    left: 0;
-    hieght: 25px;
-    width: 25px;
-    background-color: white;
-}
