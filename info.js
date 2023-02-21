@@ -36,6 +36,7 @@ function addTag(newTag) {
   tagOption.setAttribute("type", "checkbox");
   tagOption.setAttribute("name", "tagOptions");
   tagOption.setAttribute("id", newTag);
+  tagOPtion.setAttribute("class","options");
   document.getElementById("tagOpts").appendChild(tagOption);
 
   let tagLabel = document.createElement("label");
