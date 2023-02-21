@@ -75,5 +75,5 @@ header li a:hover {
 }
 
 input[type=checkbox] {
-    color: blue;
+    background-color: blue;
 }
