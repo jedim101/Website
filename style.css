@@ -87,12 +87,8 @@ header li a:hover {
   user-select: none;
 }
 
-input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.optLabel input {
+  visibility: hidden;
 }
 
 .option {
