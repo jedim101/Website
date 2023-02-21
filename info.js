@@ -42,7 +42,6 @@ function addTag(newTag) {
   
   let tagLabel = document.createElement("label");
   tagLabel.setAttribute("for", newTag);
-  tagLabel.setAttribute("id", newTag+"Label")
   tagLabel.innerHTML = newTag;
   
   document.getElementById("tagOpts").appendChild(tagLabel);
