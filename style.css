@@ -20,11 +20,13 @@ button {
     position: absolute;
     left: 350px;
     width: 120px;
+    box-shadow: 0 0 10px 0 #101010;
 }
 
 button:hover {
     background-color: #808080;
     font-weight: 600;
+    box-shadow: 0 0 20px 0 black;
 }
 
 input[type=text] {
@@ -37,6 +39,7 @@ input[type=text] {
     position: absolute;
     left: 70px;
     width: 250px;
+    box-shadow: 0 0 10px 0 #101010;
 }
 
 header {
@@ -69,5 +72,4 @@ header li a {
 
 header li a:hover {
     color: black;
-    font-size: 35px;
 }
