@@ -44,9 +44,10 @@ function addTag(newTag) {
   tagLabel.setAttribute("for", newTag);
   tagLabel.setAttribute("id", newTag+"Label")
   tagLabel.innerHTML = newTag;
-  tagLabel.innerHTML = tagOption;
-  tagLabel.innerHTML = newSpan;
+  
   document.getElementById("tagOpts").appendChild(tagLabel);
+  tagLabel.appendChild(tagOption);
+  tagLabel.appendChild(newSpan);
 
   let newBreak = document.createElement("br");
   document.getElementById("tagOpts").appendChild(newBreak);
