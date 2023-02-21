@@ -78,9 +78,6 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-.options {
-    position: absolute;
-    top: 0;
-    left: 0;
+.option {
     background-color: green;
 }
