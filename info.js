@@ -126,5 +126,5 @@ function generate() {
   }
 
   let randNum = Math.floor(Math.random() * choices.length);
-  document.getElementById("result").innerText = choices[randNum];
+  document.getElementById("result").innerText = choices;
 }
