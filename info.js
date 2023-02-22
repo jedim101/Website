@@ -116,8 +116,6 @@ function generate() {
     if(tagList[i].checked) {
       for(var q = 0; q<itemList.length; q++) {
         if (itemList[q].includes(tagNames[i])) {
-          if (choices.includes(itemList[i][0])) {
-          } else {
             choices.push(itemList[i][0]);
           }
         }
@@ -126,5 +124,5 @@ function generate() {
   }
 
   let randNum = Math.floor(Math.random() * choices.length);
-  document.getElementById("result").innerText = choices;
+  console.log(choices);
 }
