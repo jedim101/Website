@@ -76,8 +76,11 @@ function store(itemName) {
      }
   }
 
+  if (tagNames.includes(itemName)) {
+    alert(itemName + " is the name of a tag. Unfortunately, you cannot give an item the same name as a tag at this time.");
+  
   //if the item already exists
-  if(repeated(itemName) >= 0) {
+  } else if(repeated(itemName) >= 0) {
     //ask to override
     if(confirm(itemName + " already exists. Click OK to override your preexisting tags for " + itemName)) {
       //delete old item
@@ -96,11 +99,32 @@ function store(itemName) {
 
 function repeated(checkFor) {
   //loop for # of arrays in itemList
-  for(var q=0; q<itemList.length; q++) {
+  for(var i=0; i<itemList.length; i++) {
 
-    //check if checkFor is already used
-    if(itemList[q].includes(checkFor)) {
-      return q;
+    //check if checkFor is already used in items
+    if(itemList[i].includes(checkFor)) {
+      return i;
     }
   }
+}
+
+function generate() {
+  var choices = [];
+
+  //find all items with 1 or more selected tag and add it to 'choices'
+  for(var i = 0; i<tagNames.length; i++) {;
+    if(tagList[i].checked) {
+      for(var q = 0; q<itemList.length; q++) {
+        if (itemList[q].includes(tagNames[i])) {
+          if (choices.includes(itemList[i][0])) {
+          } else {
+            choices.push(itemList[i][0]);
+          }
+        }
+      }
+    }
+  }
+
+  let randNum = Math.floor(Math.random() * choices.length);
+  document.getElementById("result").innerText = choices[randNum];
 }

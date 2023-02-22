@@ -8,7 +8,7 @@
         <title>Website</title>
     </head>
 
-    <body>
+    <body onload="getStored()">
         <header>
             <nav>
                 <ul>
@@ -19,6 +19,10 @@
             </nav>
         </header>
 
-        <h1>Welcome to Test 2</h1>
+        <div id="tagOpts"></div>
+        <button class="generate" onclick="generate()">Generate</button>
+        <br>
+        <p id="result"></p>
+
     </body>
 </html>

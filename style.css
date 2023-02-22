@@ -23,6 +23,10 @@ button {
     box-shadow: 0 0 10px 0 #101010;
 }
 
+.generate {
+    left: 10px;
+}
+
 button:hover {
     background-color: #808080;
     font-weight: 600;
@@ -45,6 +49,7 @@ input[type=text] {
 header {
     background-color: #505050;
     position: fixed;
+    z-index: 10000000000000;
     top: 0;
     left: 0;
     right: 0;
