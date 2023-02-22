@@ -43,14 +43,11 @@ function addTag(newTag) {
   let tagLabel = document.createElement("label");
   tagLabel.setAttribute("for", newTag);
   tagLabel.setAttribute("class", "optLabel");
+  tagLabel.innerHTML = newTag;
   
   document.getElementById("tagOpts").appendChild(tagLabel);
   tagLabel.appendChild(tagOption);
   tagLabel.appendChild(newSpan);
-  tagLabel.innerHTML = newTag;
-
-  let newBreak = document.createElement("br");
-  document.getElementById("tagOpts").appendChild(newBreak);
 
   tagList.push(document.getElementById(newTag));
   tagNames.push(newTag);
