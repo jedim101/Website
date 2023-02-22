@@ -112,7 +112,7 @@ function generate() {
   var choices = [];
 
   //find all items with 1 or more selected tag and add it to 'choices'
-  for(var i = 0; i<tagNames.length; i++) {;
+  for(var i = 0; i<tagList.length; i++) {;
     if(tagList[i].checked) {
       for(var q = 0; q<itemList.length; q++) {
         if (itemList[q].includes(tagNames[i])) {
