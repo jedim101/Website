@@ -106,10 +106,21 @@ input[type=checkbox] {
     box-shadow: 0 0 20px 0 black;
 }
 
-.optLabel input:checked {
-    background-color: aqua;
+.option:after {
+    content: "";
+    position: absolute;
+    display: none;
 }
 
-.optLabel input:checked ~ .option {
-    background-color: aqua;
+.optLabel input:checked ~ .option:after {
+    display: block;
+}
+
+.optLabel .option:after {
+    top: 5px;
+    left: 5px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: black;
 }
