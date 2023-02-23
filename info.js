@@ -9,11 +9,12 @@ function getStored() {
       addTag(oldTags[i]);
     }
   }
-  
+
   if(localStorage.allItems){
     var oldItems = JSON.parse(localStorage.allItems);
     for(var i = 0; i<oldItems.length; i++) {
       itemList.push(oldItems[i]);
+      displayItems(oldItems[i]);
     }
   }
 }

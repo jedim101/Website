@@ -141,3 +141,7 @@ input[type=checkbox] {
     border-radius: 50%;
     background-color: black;
 }
+
+.list {
+    margin-top: 50px;
+}
