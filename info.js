@@ -9,6 +9,7 @@ function getStored() {
       addTag(oldTags[i]);
     }
   }
+  
   if(localStorage.allItems){
     var oldItems = JSON.parse(localStorage.allItems);
     for(var i = 0; i<oldItems.length; i++) {
@@ -94,7 +95,30 @@ function store(itemName) {
     alert("Please select at least one tag.")
   } else {
     itemList.push(toStore);
+    displayItems(toStore)
   }
+}
+
+function displayItems(toDisplay) {
+  var item = toDisplay[0];
+
+  var container = document.createElement("div");
+  container.setAttribute("id", item + "Container");
+
+  var itemDisplay = document.createElement("p");
+  itemDisplay.setAttribute("id", item);
+  itemDisplay.innerText = item;
+  container.appendChild(itemDisplay);
+
+  for(var i=1; i<toDisplay.length; i++) {
+
+    let tagDisplay = document.createElement("p");
+    tagDisplay.setAttribute("id", item + toDisplay[i]);
+    tagDisplay.innerText = toDisplay[i];
+    container.appendChild(tagDisplay);
+  }
+
+  document.getElementById("itemShow").appendChild(container);
 }
 
 function repeated(checkFor) {
