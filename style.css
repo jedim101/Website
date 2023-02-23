@@ -18,9 +18,12 @@ button {
     border-radius: 30px;
     border: 0px;
     position: absolute;
-    left: 350px;
-    width: 120px;
     box-shadow: 0 0 10px 0 #101010;
+}
+
+.submit {
+    width: 120px;
+    left: 350px;
 }
 
 .generate {

@@ -112,17 +112,22 @@ function generate() {
   var choices = [];
 
   //find all items with 1 or more selected tag and add it to 'choices'
-  for(var i = 0; i<tagList.length; i++) {;
+  for(var i = 0; i<tagList.length; i++) {
     if(tagList[i].checked) {
       for(var q = 0; q<itemList.length; q++) {
-        if (itemList[q].includes(tagNames[i])) {
-            choices.push(itemList[i][0]);
+        if(itemList[q].includes(tagNames[i])) {
+          if(choices.includes(itemList[q][0]) == false) {
+            choices.push(itemList[q][0]);
           }
         }
       }
     }
   }
 
+  if(choices.length == 0) {
+    alert("You must select at least one tag to generate with.");
+  } else {
   let randNum = Math.floor(Math.random() * choices.length);
-  console.log(choices);
+  console.log(choices[randNum]);
+  }
 }

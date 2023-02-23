@@ -19,18 +19,16 @@
             </nav>
         </header>
 
-        <label id="itemLabel" for="item">Item:</label>
+        <label id="itemLabel " for="item">Item:</label>
         <input type="text" id="item">
-        <button onclick="submitItem()">Add Item</button>
+        <button onclick="submitItem()" class="submit">Add Item</button>
         <br> <br>
         <label id="tagsLabel" for="tags">Tag:</label>
         <input type="text" id="tags">
-        <button id="tagButton" onclick="createTag()">Add Tag</button>
+        <button id="tagButton" onclick="createTag()" class="submit">Add Tag</button>
         <br> <br>
 
         <div id="tagOpts"></div>
-        
-        <button onclick="localStorage.clear()">Clear Storage</button>
     
     </body>
 </html>
