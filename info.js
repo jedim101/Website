@@ -166,7 +166,7 @@ function generate() {
   }
 
   if(choices.length == 0) {
-    alert("You must select at least one tag to generate with.");
+    alert("There are no items with the given tag(s).");
   } else {
     let randNum = Math.floor(Math.random() * choices.length);
   
