@@ -141,7 +141,7 @@ function toggleGenMode() {
   if(modeAnd) {
     //set to Or mode (modeAnd = false)
     modeAnd = false;
-    document.getElementById("genMode").innerText = "On";
+    document.getElementById("genMode").innerText = "Or";
     
   //in Or mode
   } else {
