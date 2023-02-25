@@ -108,6 +108,7 @@ function displayItems(toDisplay) {
 
   var itemDisplay = document.createElement("p");
   itemDisplay.setAttribute("id", item);
+  itemDisplay.setAttribute("class", "itemDisplay");
   itemDisplay.innerText = item;
   container.appendChild(itemDisplay);
 
@@ -115,6 +116,7 @@ function displayItems(toDisplay) {
 
     let tagDisplay = document.createElement("p");
     tagDisplay.setAttribute("id", item + toDisplay[i]);
+    tagDisplay.setAttribute("class", "tagDisplay");
     tagDisplay.innerText = toDisplay[i];
     container.appendChild(tagDisplay);
   }
