@@ -135,6 +135,24 @@ function repeated(checkFor) {
   }
 }
 
+var modeAnd = false;
+
+function toggleGenMode() {
+  
+  //If in And mode
+  if(modeAnd) {
+    //set to Or mode (modeAnd = false)
+    modeAnd = false;
+    document.getElementById("genMode").innerText = "Or";
+    
+  //in Or mode
+  } else {
+    //put in And mode
+    modeAnd = true;
+    document.getElementById("genMode").innerText = "And";
+  }
+}
+
 function generate() {
   var choices = [];
 
@@ -152,9 +170,11 @@ function generate() {
   }
 
   if(choices.length == 0) {
-    alert("You must select at least one tag to generate with.");
+    alert("There are no items with the given tag(s).");
   } else {
-  let randNum = Math.floor(Math.random() * choices.length);
-  console.log(choices[randNum]);
+    let randNum = Math.floor(Math.random() * choices.length);
+  
+    document.getElementById("allChoices").innerText = choices;
+    document.getElementById("randChoice").inneText = choices[randNum];
   }
 }

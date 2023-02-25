@@ -116,8 +116,8 @@ input[type=checkbox] {
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width:20px;
+    height: 1em;
+    width:1em;
     background-color: #B0B0B0;
     border-radius: 50%;
     box-shadow: 0 0 10px 0 #101010;
@@ -139,10 +139,10 @@ input[type=checkbox] {
 }
 
 .optLabel .option:after {
-    top: 5px;
-    left: 5px;
-    height: 10px;
-    width: 10px;
+    top: 0.25em;
+    left: 0.25em;
+    height: 0.5em;
+    width: 0.5em;
     border-radius: 50%;
     background-color: black;
 }
