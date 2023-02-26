@@ -1,6 +1,7 @@
 const itemList =[];
 const tagList = [];
 const tagNames = [];
+const randItemList = [];
 
 function getStored(page) {
   if(localStorage.allTags){
@@ -16,6 +17,16 @@ function getStored(page) {
       itemList.push(oldItems[i]);
       if(page == "addItem") {
         displayItems(oldItems[i]);
+      }
+    }
+  }
+
+  if(localStorage.randItems) {
+    var oldRandItems = JSON.parse(localStorage.randItems);
+    for(var i = 0; i<oldRandItems.length; i++) {
+      randItemList.push(oldRandItems[i]);
+      if(page == "select") {
+        displayResults(oldRandItems[i]);
       }
     }
   }
@@ -172,7 +183,7 @@ function generate() {
   for(var i = 0; i<itemList.length; i++) {
     //for each slected tag
     for(var q = 0; q<selectedTags.length; q++) {
-      
+
       //if 'And' mode (all selected tags included)
       if(modeAnd) {
 
@@ -205,8 +216,20 @@ function generate() {
     alert("There are no items with the given tag(s).");
   } else {
     let randNum = Math.floor(Math.random() * choices.length);
-  
-    document.getElementById("allChoices").innerText = choices;
-    document.getElementById("randChoice").innerText = choices[randNum];
+    let item = choices[randNum];
+
+    displayResults(item);
+    randItemList.push(item);
+    localStorage.randItems = JSON.stringify(randItemList);
   }
+}
+
+function displayResults(toDisplay) {
+  let display = document.createElement("p");
+  display.innerHTML = toDisplay;
+
+  let newBr = document.createElement("br");
+
+  document.getElementById("results").appendChild(display);
+  document.getElementById("results").appendChild(newBr);
 }
