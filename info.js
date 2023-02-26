@@ -2,7 +2,7 @@ const itemList =[];
 const tagList = [];
 const tagNames = [];
 
-function getStored() {
+function getStored(page) {
   if(localStorage.allTags){
     var oldTags = JSON.parse(localStorage.allTags);
     for(var i = 0; i<oldTags.length; i++) {
@@ -14,7 +14,9 @@ function getStored() {
     var oldItems = JSON.parse(localStorage.allItems);
     for(var i = 0; i<oldItems.length; i++) {
       itemList.push(oldItems[i]);
-      displayItems(oldItems[i]);
+      if(page == "addItem") {
+        displayItems(oldItems[i]);
+      }
     }
   }
 }
@@ -155,15 +157,45 @@ function toggleGenMode() {
 
 function generate() {
   var choices = [];
+  var selectedTags = [];
 
-  //find all items with 1 or more selected tag and add it to 'choices'
+  //for each tag
   for(var i = 0; i<tagList.length; i++) {
+    //check if selected
     if(tagList[i].checked) {
-      for(var q = 0; q<itemList.length; q++) {
-        if(itemList[q].includes(tagNames[i])) {
-          if(choices.includes(itemList[q][0]) == false) {
-            choices.push(itemList[q][0]);
-          }
+      //add to selectedTags
+      selectedTags.push(tagNames[i]);
+    }
+  }
+
+  //for each item
+  for(var i = 0; i<itemList.length; i++) {
+    //for each slected tag
+    for(var q = 0; q<selectedTags.length; q++) {
+      
+      //if 'And' mode (all selected tags included)
+      if(modeAnd) {
+
+      //if item does not has selectedtags[q]
+      if(!itemList[i].includes(selectedTags[q])) {
+        break;
+
+      //if this is last selected tag
+      } else if(q+1 == selectedTags.length) {
+        if(!choices.includes(itemList[i][0])) {
+          //add item name to choices
+          choices.push(itemList[i][0]);
+        }
+      }
+
+      //'Or' mode (at least one selected tag included)
+      } else {
+        //item includes selected tag
+        if(itemList[i].includes(selectedTags[q])) {
+          if(!choices.includes(itemList[i][0])) {
+            //add item name to choices
+            choices.push(itemList[i][0]);
+          };
         }
       }
     }
@@ -175,6 +207,6 @@ function generate() {
     let randNum = Math.floor(Math.random() * choices.length);
   
     document.getElementById("allChoices").innerText = choices;
-    document.getElementById("randChoice").inneText = choices[randNum];
+    document.getElementById("randChoice").innerText = choices[randNum];
   }
 }
