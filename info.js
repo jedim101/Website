@@ -233,3 +233,17 @@ function displayResults(toDisplay) {
   document.getElementById("results").appendChild(display);
   document.getElementById("results").appendChild(newBr);
 }
+
+var geneBlockCount = 0;
+
+function addGenerator() {
+  geneBlockCount++;
+
+  let orig = document.querySelector('#generatorBlock0');
+  let clone = orig.cloneNode(true);
+
+  clone.id = ("generatorBlock"+geneBlockCount);
+
+  let container = document.getElementById("allGenerates");
+  container.append(clone);
+}

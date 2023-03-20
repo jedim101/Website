@@ -19,13 +19,17 @@
             </nav>
         </header>
 
-        <div class="containsAll">
-            <div id="tagOpts"></div>
-            <button class="generate" onclick="generate()">Generate</button><br>
-            <button class="mode" id="genMode" onclick="toggleGenMode()">Or</button>
+        <div id="allGenerates" style="margin-left: 15px">
 
-            <div class="results" id="results"></div>
+            <div id="generatorBlock0" class="generatorBlock">
+                <div id="tagOpts"></div>
+                <button class="generate button" onclick="generate()">Generate</button><br>
+                <button class="mode button" id="genMode" onclick="toggleGenMode()">Or</button>
+                        
+                <div class="results" style="margin-top: 60px"></div>
+            </div>
         </div>
+        <button onclick="addGenerator()" class="addGenerator">+</button>
 
     </body>
 </html>
